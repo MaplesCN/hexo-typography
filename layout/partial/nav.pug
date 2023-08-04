@@ -1,0 +1,50 @@
+div#site-nav.site-title-links
+    ul
+        li
+            if is_home()
+                a.current(href=config.root)= __('Home')
+            else
+                a(href=config.root)= __('Home')
+        li
+            if is_archive()
+                a.current(href=config.root + config.archive_dir)= __('Archive')
+            else
+                a(href=config.root + config.archive_dir)= __('Archive')
+        - if (site.categories.length > 0) {
+        li
+            if is_current('categories/')
+                a.current(href=config.root + config.category_dir)= __('Categories')
+            else
+                a(href=config.root + config.category_dir)= __('Categories')
+        - }
+        - if (site.tags.length > 0) {
+        li
+            if is_current('tags/')
+                a.current(href=config.root + config.tag_dir)= __('Tags')
+            else
+                a(href=config.root + config.tag_dir)= __('Tags')
+        - }
+        li
+            if is_current('about/')
+                a.current(href=config.root + config.about_dir)= __('About')
+            else
+                a(href=config.root + config.about_dir)= __('About')
+        li.soc(style="margin-top:.5em!important")
+            if theme.github
+                a(href="https://github.com/" + theme.github, target="_blank", rel="noopener noreferrer", aria-label="Github")
+                    i.fa-brands.fa-github &nbsp;
+            if theme.bilibili
+                a(href="https://space.bilibili.com/" + theme.bilibili, target="_blank", rel="noopener noreferrer", aria-label="Bilibili")
+                    i.fa-brands.fa-bilibili &nbsp;
+            if theme.zhihu
+                a(href="https://www.zhihu.com/people/" + theme.zhihu, target="_blank", rel="noopener noreferrer", aria-label="Zhihu")
+                    i.fa-brands.fa-zhihu &nbsp;
+            a(href="https://1piece.cn", target="_blank", rel="noopener noreferrer", title="一片")
+                i.fa-solid.fa-earth-asia &nbsp;
+            if theme.rss
+                a(href="/" + theme.rss, target="_blank", rel="noopener noreferrer", aria-label="RSS")
+                    i.fa.fa-rss &nbsp;
+            a(id="dark-toggler", aria-label="DarkSwitch")
+    div.visible-lg.visible-md.visible-sm.site-nav-footer
+        br.site-nav-footer-br
+        include footer

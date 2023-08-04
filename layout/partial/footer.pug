@@ -1,0 +1,11 @@
+footer
+    - var currYear = new Date().getFullYear();
+    p
+        a(href="#top",  rel="Top")
+            i.fa-solid.fa-caret-up
+            |&nbsp;
+            != __('Top')
+    p &copy;&nbsp;
+        !=currYear
+        | &nbsp;
+        a(href="/",  rel="noopener noreferrer")!=theme.author ? theme.author : config.author ? config.author : config.title
