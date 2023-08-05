@@ -18,8 +18,7 @@ link(rel="short icon", href= theme.cdn + "/images/favicon.png", type="image/x-ic
 link(rel="stylesheet", href= url_for('https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'))
 link(rel="stylesheet", href= url_for('https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css'))
 //- link(rel="stylesheet", href= url_for('css/typography-custom-font.css'))
-if theme.themeStyle == "light"
-    link(rel="stylesheet", href= url_for(theme.cdn + '/css/style.css'))
-if theme.themeStyle == "dark"
-    link(rel="stylesheet", href= url_for(theme.cdn + '/css/style-dark.css'))
+if config.waline
+    link(rel="stylesheet", href= config.walinecss)
+link(rel="stylesheet", href= url_for(theme.cdn + '/css/style.css'))
 link(rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/rss.xml")

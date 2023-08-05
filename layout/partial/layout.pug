@@ -20,4 +20,5 @@ html(lang="zh-CN")
         script(src= url_for('https://cdn.staticfile.org/jquery-migrate/3.4.1/jquery-migrate.min.js'))
         script(src= url_for('https://cdn.staticfile.org/jquery.appear/0.4.1/jquery.appear.min.js'))
         script(src= url_for(theme.cdn + '/js/typography.js'))
-
+        if config.waline
+            script(type="module")="import { init } from '" + config.walinejs + "';" + config.init
