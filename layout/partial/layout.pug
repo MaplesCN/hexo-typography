@@ -17,8 +17,8 @@ html(lang="zh-CN")
         script(src= url_for('https://unpkg.zhimg.com/jquery@3.7.0/dist/jquery.min.js'))
         script(src= url_for(theme.cdn + '/js/darkmode.js'))
         script(src= url_for('https://unpkg.zhimg.com/bootstrap@3.3.7/dist/js/bootstrap.min.js'))
-        script(src= url_for('https://cdn.staticfile.org/jquery-migrate/3.4.1/jquery-migrate.min.js'))
-        script(src= url_for('https://cdn.staticfile.org/jquery.appear/0.4.1/jquery.appear.min.js'))
+        script(src= url_for('https://unpkg.zhimg.com/jquery-migrate@3.4.1/dist/jquery-migrate.min.js'))
+        script(src= url_for('https://cdn.bootcdn.net/ajax/libs/jquery.appear/0.4.1/jquery.appear.min.js'))
         script(src= url_for(theme.cdn + '/js/typography.js'))
         if config.waline
             script(type="module")="import { init } from '" + config.walinejs + "';" + config.init
